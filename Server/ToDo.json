@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "message": "Read",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "message": "Do",
+    "completed": false
+  }
+]
