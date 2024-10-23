@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "title": "Tea Recipe",
+    "ingredients": [
+      "Tea Leaves",
+      "Milk",
+      "Water",
+      "Sugar"
+    ],
+    "instructions": [
+      "Boil water in a pot.",
+      "Add the tea leaves to the boiling water.",
+      "Let it steep for 3-5 minutes, depending on how strong you like your tea.",
+      "In a separate pan, heat the milk until it's warm.",
+      "Strain the tea into a cup, discarding the tea leaves.",
+      "Add the warm milk to the cup.",
+      "Stir in sugar to taste.",
+      "Enjoy your tea!"
+    ]
+  },
+  {
+    "title": "Rice Recipe",
+    "ingredients": [
+      "Rice",
+      "Water"
+    ],
+    "instructions": [
+      "Wash Rice Properly",
+      "Heat your Cooker",
+      "Light up the gas",
+      "Cook it for 10 minutes"
+    ],
+    "id": 2
+  }
+]

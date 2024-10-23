@@ -1,0 +1,136 @@
+/* Form Styling */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  form input {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  /* Neutral Button Styling */
+  form button {
+    background-color: #5a5a5a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #444;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Recipe Display Styling */
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    background: #f9f9f9;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+  }
+  
+  div {
+    max-width: 700px;
+    margin: 20px auto;
+  }
+  
+  div h3 {
+    background-color: #0066cc;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  div h2 {
+    background-color: #2c754b;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 22px;
+  }
+  div h1{
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+  
+  div h4 {
+    margin: 8px 0;
+    font-weight: bold;
+    font-size: 16px;
+    color: #444;
+  }
+  
+  ol {
+    padding-left: 20px;
+  }
+  
+  ol li {
+    margin-bottom: 5px;
+    background: #e3e3e3;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+  }
+  
+  p.error {
+    color: #d9534f;
+    font-weight: bold;
+  }
+  
+  .loading {
+    text-align: center;
+    font-style: italic;
+    color: #007bff;
+    font-size: 14px;
+  }
+  
