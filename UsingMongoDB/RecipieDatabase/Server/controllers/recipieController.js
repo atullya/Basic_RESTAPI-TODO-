@@ -19,7 +19,9 @@ const insertRecipie = async (req, res) => {
       instructions,
     });
     await newRecipie.save();
-    return res.status(201).json({ message: `Successfully inserted new title ${title}` });
+    return res
+      .status(201)
+      .json({ message: `Successfully inserted new title ${title}` });
   } catch (error) {
     console.error("Error inserting recipe:", error);
     return res.status(500).json({ message: "Server Error" });
@@ -41,4 +43,40 @@ const deleteRecipie = async (req, res) => {
   }
 };
 
-export { getAllRecipie, insertRecipie, deleteRecipie };
+const editRecipies = async (req, res) => {
+  const id = req.params.id;
+  const { field, indx, newValue } = req.body;
+
+  try {
+    let update = {};
+
+    // Handle updating different fields.
+    if (field === "title") {
+      update.title = newValue;
+    } else if (field === "ingredient" && indx !== undefined) {
+      update = { $set: { [`ingredients.${indx}`]: newValue } };
+    } else if (field === "instruction" && indx !== undefined) {
+      update = { $set: { [`instructions.${indx}`]: newValue } };
+    } else {
+      return res.status(400).json({ message: "Invalid update field or index" });
+    }
+
+    // Perform the update operation.
+    const updatedRecipe = await Recipee.findByIdAndUpdate(id, update, {
+      new: true,
+    });
+
+    if (!updatedRecipe) {
+      return res.status(404).json({ message: "Recipe not found" });
+    }
+
+    return res
+      .status(201)
+      .json({ message: "Successfully Edited", updatedRecipe });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Server Error" });
+  }
+};
+
+export { getAllRecipie, insertRecipie, deleteRecipie, editRecipies };

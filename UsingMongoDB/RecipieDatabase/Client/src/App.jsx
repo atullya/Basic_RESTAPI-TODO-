@@ -95,6 +95,53 @@ function App() {
     }
   };
 
+  const editRecipe = async (id, field, indx = null) => {
+    // Prompt the user for the new value based on the field.
+    let newValue = prompt(`Enter new ${field}`);
+  
+    // If the user cancels or leaves the prompt empty, exit the function.
+    if (!newValue) {
+      return;
+    }
+  
+    try {
+      // Await the response from the patch request.
+      let res = await axios.patch(`http://localhost:3001/api/recipiee/editRecipie/${id}`, {
+        field,
+        indx,
+        newValue,
+      });
+  
+      // Check if the response status indicates success.
+      if (res.status === 201 || res.status === 200) {
+        alert("Success");
+        getAllRecipie();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
+  // const editIngrident = (id, indx) => {
+  //   // Prompt the user to enter the new ingredient.
+  //   let newIngrident = prompt("Enter New ingredient");
+
+  //   // Map through all recipes and update the one that matches the id.
+  //   let updatedRecipie = allrecipie.map((recipie) =>
+  //     recipie._id === id
+  //       ? {
+  //           ...recipie,
+  //           ingredients: recipie.ingredients.map((ing, indxx) =>
+  //             indxx === indx ? newIngrident : ing
+  //           ),
+  //         }
+  //       : recipie
+  //   );
+
+  //   // Update the state with the modified recipes array.
+  //   setallrecipie(updatedRecipie);
+  // };
+
   useEffect(() => {
     getAllRecipie();
   }, []);
@@ -152,33 +199,36 @@ function App() {
       {loading && <h1 className="loading">Loading....</h1>}
       {error && <h1 className="error">Something Went Wrong.....</h1>}
       {!loading && !error && allrecipie.length > 0 ? (
-        <div className="recipe-container">
-          {allrecipie.map((item, i) => (
-            <div className="recipe-card" key={item._id}>
-              {" "}
-              {/* Use unique ID as key */}
-              <h2 className="recipe-title">{item.title}</h2>
-              <h3 className="recipe-subtitle">Ingredients:</h3>
-              <ul className="ingredient-list">
-                {item.ingredients.map((v, indx) => (
-                  <li key={indx} className="ingredient-item">
-                    {v}
-                  </li>
-                ))}
-              </ul>
-              <h3 className="recipe-subtitle">Instructions:</h3>
-              <ol className="instruction-list">
-                {item.instructions.map((inst, indxx) => (
-                  <li key={indxx} className="instruction-item">
-                    {inst}
-                  </li>
-                ))}
-              </ol>
-              <button onClick={() => handleDelete(item._id)}>Delete</button>{" "}
-              {/* Use arrow function here */}
-            </div>
-          ))}
-        </div>
+       <div className="recipe-container">
+       {allrecipie.map((item, i) => (
+         <div className="recipe-card" key={item._id}>
+           <h2 className="recipe-title">
+             {item.title}
+             <button onClick={() => editRecipe(item._id, "title")}>Edit Title</button>
+           </h2>
+           <h3 className="recipe-subtitle">Ingredients:</h3>
+           <ul className="ingredient-list">
+             {item.ingredients.map((v, indx) => (
+               <li key={indx} className="ingredient-item">
+                 {v}
+                 <button onClick={() => editRecipe(item._id, "ingredient", indx)}>Edit</button>
+               </li>
+             ))}
+           </ul>
+           <h3 className="recipe-subtitle">Instructions:</h3>
+           <ol className="instruction-list">
+             {item.instructions.map((inst, indxx) => (
+               <li key={indxx} className="instruction-item">
+                 {inst}
+                 <button onClick={() => editRecipe(item._id, "instruction", indxx)}>Edit</button>
+               </li>
+             ))}
+           </ol>
+           <button onClick={() => handleDelete(item._id)}>Delete</button>
+         </div>
+       ))}
+     </div>
+     
       ) : (
         <h2 className="no-results">No Results Found</h2>
       )}
