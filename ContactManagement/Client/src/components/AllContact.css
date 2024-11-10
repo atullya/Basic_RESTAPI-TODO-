@@ -1,0 +1,257 @@
+/* AllContact.css */
+
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e8f0fe;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  width: 100%;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Search Input */
+.search-input {
+  width: 100%;
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+  border-radius: 30px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-size: 16px;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+/* Contacts Container */
+.contacts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Contact Item */
+.contact-item {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  flex: 1 1 280px;
+  max-width: 300px; /* Set a max width for better alignment */
+}
+
+.contact-item:hover {
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Contact Info */
+.contact-info {
+  margin: 10px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.contact-info strong {
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #dc3545;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #c82333;
+}
+
+/* Input Field */
+input[type="text"] {
+  width: calc(100% - 60px);
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button */
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 2px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #0056b3;
+  box-shadow: 0px 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Loading & Error Messages */
+.loading, .error {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-top: 20px;
+}
+
+.error {
+  color: #dc3545;
+}
+
+/* Total Contacts */
+.total-contacts {
+  text-align: right;
+  font-size: 16px;
+  color: #555;
+  margin-top: 10px;
+  font-style: italic;
+}
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 16px;
+}
+/* Style for the sorting heading */
+h2 {
+  font-size: 1.5rem; /* Increase font size */
+  margin-bottom: 0.5rem; /* Space below the heading */
+  color: #333; /* Darker text color */
+  text-align: center; /* Align text to the left */
+}
+
+/* Style for the dropdown container */
+.container {
+  margin: 20px 0; /* Space around the container */
+}
+
+/* Style for the dropdown */
+select {
+  padding: 0.5rem; /* Space inside the dropdown */
+  font-size: 1rem; /* Font size for the options */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #fff; /* White background */
+  cursor: pointer; /* Change cursor on hover */
+  transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+/* Change border color on focus */
+select:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Style for the default option */
+select option {
+  color: #aaa; /* Gray color for default option */
+}
+
+/* Style for the select options */
+select option:not(:first-child) {
+  color: #333; /* Darker color for other options */
+}
+
+.sorting {
+  display: flex; /* Use flexbox for horizontal layout */
+  justify-content: space-between; /* Space out the dropdowns */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 20px; /* Add some space below the sorting section */
+}
+
+.sorting h2 {
+  margin-right: 10px; /* Space between the heading and dropdown */
+}
+
+.sorting select {
+  margin-left: 10px; /* Space between the dropdowns */
+  padding: 5px; /* Add some padding for better appearance */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 4px; /* Round the corners */
+  font-size: 16px; /* Increase font size */
+}
+

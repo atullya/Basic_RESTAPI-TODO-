@@ -1,0 +1,88 @@
+/* AddNewContact.css */
+
+/* Add contact container */
+.add-contact-container {
+    max-width: 500px;
+    margin: 50px auto;
+  }
+  
+  /* Back button styling */
+  .back-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .back-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Modal overlay */
+  .modal-overlay {
+    position: fixed; /* Fixed positioning */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 1000; /* Ensure modal is on top */
+  }
+  
+  /* Form container styling */
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff; /* White background for the modal */
+    padding: 80px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    max-width: 400px; /* Maximum width */
+    width: 100%; /* Full width */
+  }
+  
+  /* Label styling */
+  .form-label {
+    margin-bottom: 15px;
+  }
+  
+  /* Input styling */
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s;
+  }
+  
+  /* Change border color on focus */
+  .form-input:focus {
+    border-color: #007bff;
+  }
+  
+  /* Submit button styling */
+  .submit-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Change submit button color on hover */
+  .submit-button:hover {
+    background-color: #218838;
+  }
+  
+  /* Close button styling */
+ 
